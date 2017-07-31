@@ -1,0 +1,14 @@
+<a ui-sref="newLocation" class="btn-primary btn-lg nodecoration">Add New Location</a>
+<table class="table locationtable">
+    <tr>
+        <td><h3>All Locations</h3></td>
+        <td></td>
+    </tr>
+    <tr ng-repeat="location in locations">
+        <td>{{location.name}}</td>
+        <td>
+            <a class="btn btn-primary" ui-sref="viewLocation({id:location.id})">View</a>
+            <a class="btn btn-danger"  ng-click="deleteLocation(location)">Delete</a>
+        </td>
+    </tr>
+</table>

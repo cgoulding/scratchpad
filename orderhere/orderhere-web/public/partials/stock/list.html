@@ -1,0 +1,14 @@
+<a ui-sref="newStock" class="btn-primary btn-lg nodecoration">Add New Stock</a>
+<table class="table stocktable">
+    <tr>
+        <td><h3>All Stocks</h3></td>
+        <td></td>
+    </tr>
+    <tr ng-repeat="stock in stocks">
+        <td>{{stock.name}}</td>
+        <td>
+            <a class="btn btn-primary" ui-sref="viewStock({id:stock.id})">View</a>
+            <a class="btn btn-danger"  ng-click="deleteStock(stock)">Delete</a>
+        </td>
+    </tr>
+</table>

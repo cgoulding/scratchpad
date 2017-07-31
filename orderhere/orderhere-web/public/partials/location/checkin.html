@@ -1,0 +1,21 @@
+<table class="table locationtable">
+    <tr>
+        <td><h3>Details for {{location.name}}</h3></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Location Name</td>
+        <td>{{location.name}}</td>
+    </tr>
+    <tr>
+        <td>Address</td>
+        <td>{{location.address}}</td>
+    </tr>
+    <tr>
+        <td>Server</td>
+        <td>{{location.server}}</td>
+    </tr>
+</table>
+<div>
+    <a class="btn btn-primary" ui-sref="checkinLocation({id:location.id})">Checkin</a>
+</div>

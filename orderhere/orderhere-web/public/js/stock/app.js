@@ -1,0 +1,23 @@
+angular.module('stockApp',['ui.router','ngResource','stockApp.controllers','stockApp.services']);
+
+angular.module('stockApp').config(function($stateProvider,$httpProvider){
+    $stateProvider.state('stocks',{
+        url:'/stocks',
+        templateUrl:'partials/stock/list.html',
+        controller:'StockListController'
+    }).state('viewStock',{
+       url:'/stocks/:id/view',
+       templateUrl:'partials/stock/view.html',
+       controller:'StockViewController'
+    }).state('newStock',{
+        url:'/stocks/new',
+        templateUrl:'partials/stock/add.html',
+        controller:'StockCreateController'
+    }).state('editStock',{
+        url:'/stocks/:id/edit',
+        templateUrl:'partials/stock/edit.html',
+        controller:'StockEditController'
+    });
+}).run(function($state){
+   $state.go('stocks');
+});

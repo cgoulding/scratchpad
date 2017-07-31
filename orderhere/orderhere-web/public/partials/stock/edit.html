@@ -1,0 +1,14 @@
+<form class="form-horizontal" role="form" ng-submit="updateStock()">
+    <div ng-include="'partials/stock/_form.html'"></div>
+</form>
+
+<a ui-sref="newItem()" class="btn-primary btn-lg nodecoration">Add New Item</a>
+<table class="table stockitemtable">
+	<tr ng-repeat="item in stock.items">
+	   	<td>{{item.name}}</td>
+	   	<td>
+	       	<a class="btn btn-primary" ui-sref="viewItem({id:item.id})">View</a>
+	       	<a class="btn btn-danger"  ng-click="deleteItem(item)">Delete</a>
+		</td>
+	</tr>
+</table>

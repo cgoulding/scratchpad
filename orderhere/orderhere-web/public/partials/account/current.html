@@ -1,0 +1,47 @@
+<div ng-hide="isCheckedIn()">
+<h1>Search Location</h1>
+<form class="form-horizontal" role="form" ng-submit="accountLocationSearch()">
+        <input type="text" ng-model="search.country" class="form-control" id="country" placeholder="Location Country"/>
+        <input type="text" ng-model="search.state" class="form-control" id="state" placeholder="Location State"/>
+        <input type="text" ng-model="search.address" class="form-control" id="address" placeholder="Location Address"/>
+        <input type="submit" class="btn btn-primary" value="Search"/>
+</form>
+
+<div>
+<h3>Search Results</h3>
+<table class="table locationstable">
+    <tr>
+        <td>Name</td>
+        <td>Address</td>
+        <td></td>
+    </tr>
+    <tr ng-repeat="location in locations">
+        <td>{{location.name}}</td>
+        <td>{{location.address}}</td>
+        <td><a class="btn btn-primary" ng-click="accountLocationCheckin({id:location.id})">Checkin</a></td>
+    </tr>
+</table>
+</div>
+</div>
+
+<div ng-show="isCheckedIn()">
+<div>
+	<h1>Current Location</h1>
+	<span>{{currentLocation.name}}</span> <span>{{currentLocation.address}}</span>
+	<a class="btn btn-primary" ng-click="accountLocationCheckout(currentLocation)">Checkout</a>
+<div>
+
+<table class="table stocktable">
+    <tr>
+        <td><h3>All Stocks</h3></td>
+        <td></td>
+    </tr>
+    <tr ng-repeat="stock in stocks">
+        <td>{{stock.name}}</td>
+        <td>
+            <a class="btn btn-primary" ui-sref="viewStock({id:stock.id})">View</a>
+            <a class="btn btn-danger"  ng-click="deleteStock(stock)">Delete</a>
+        </td>
+    </tr>
+</table>
+</div>

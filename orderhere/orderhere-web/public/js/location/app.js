@@ -1,0 +1,23 @@
+angular.module('locationApp',['ui.router','ngResource','locationApp.controllers','locationApp.services']);
+
+angular.module('locationApp').config(function($stateProvider,$httpProvider){
+    $stateProvider.state('locations',{
+        url:'/locations',
+        templateUrl:'partials/location/list.html',
+        controller:'LocationListController'
+    }).state('viewLocation',{
+       url:'/locations/:id/view',
+       templateUrl:'partials/location/view.html',
+       controller:'LocationViewController'
+    }).state('newLocation',{
+        url:'/locations/new',
+        templateUrl:'partials/location/add.html',
+        controller:'LocationCreateController'
+    }).state('editLocation',{
+        url:'/locations/:id/edit',
+        templateUrl:'partials/location/edit.html',
+        controller:'LocationEditController'
+    });
+}).run(function($state){
+   $state.go('locations');
+});

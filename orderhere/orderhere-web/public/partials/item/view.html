@@ -1,0 +1,27 @@
+<h1>Stock: {{stock.name}}</h1>
+
+<table class="table itemtable">
+    <tr>
+        <td><h3>Details for {{item.name}}</h3></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Stock Item Name</td>
+        <td>{{item.name}}</td>
+    </tr>
+    <tr>
+        <td>Stock Item Description</td>
+        <td>{{item.description}}</td>
+    </tr>
+    <tr>
+        <td>Stock Item Category</td>
+        <td>{{item.category}}</td>
+    </tr>
+    <tr>
+        <td>Stock Item Price</td>
+        <td>{{item.price}}</td>
+    </tr>
+</table>
+<div>
+    <a class="btn btn-primary" ui-sref="editItem({id:item.id})">Edit</a>
+</div>
